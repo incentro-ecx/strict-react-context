@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "strict-react-context",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A wrapper around React context that throws an error when a context value is used without being provided.",
   "keywords": [
     "react",
