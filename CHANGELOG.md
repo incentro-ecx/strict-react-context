@@ -2,9 +2,7 @@
 
 ## 1.0.0 (2024-09-26)
 
-### ⚠ BREAKING CHANGES
-
-- initial commit
+Initial commit for version 1.
 
 ### Features
 
