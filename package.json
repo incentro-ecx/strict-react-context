@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "strict-react-context",
+  "version": "0.0.1",
+  "description": "A wrapper around React context that throws an error when a context value is used without being provided.",
+  "keywords": [
+    "react",
+    "context",
+    "required",
+    "strict",
+    "useContext",
+    "error"
+  ],
+  "homepage": "https://github.com/incentro-dc/strict-react-context",
+  "bugs": "https://github.com/incentro-dc/strict-react-context/issues",
+  "repository": "https://github.com/incentro-dc/strict-react-context",
+  "license": "MIT",
+  "author": "Luud Janssen",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "pnpm run \"/^clean:.*/\"",
+    "clean:build": "rimraf dist",
+    "clean:cache": "rimraf node_modules/.cache",
+    "format": "prettier --write . --cache",
+    "lint": "pnpm run \"/^lint:.*/\"",
+    "lint:prettier": "prettier --check . --cache",
+    "lint:typescript": "tsc --noEmit",
+    "release": "env-cmd release-it",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "use-context-selector": "^2.0.0"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@tsconfig/strictest": "^2.0.3",
+    "@types/react": "^18.3.9",
+    "@vitejs/plugin-react": "^4.3.1",
+    "env-cmd": "^10.1.0",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.12",
+    "react": "^18.3.1",
+    "release-it": "^17.1.1",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.2.2",
+    "vitest": "^1.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  }
+}

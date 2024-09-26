@@ -1,0 +1,33 @@
+{
+  "github": {
+    "release": true,
+    "releaseName": "v${version}"
+  },
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagAnnotation": "v${version}"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          { "type": "feat", "section": "Features" },
+          { "type": "fix", "section": "Bug Fixes" },
+          { "type": "chore", "hidden": true },
+          { "type": "docs", "hidden": true },
+          { "type": "style", "hidden": true },
+          { "type": "refactor", "hidden": true },
+          { "type": "ci", "hidden": true }
+        ]
+      },
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog"
+    }
+  },
+  "hooks": {
+    "before:init": "pnpm lint && pnpm test run",
+    "after:bump": "pnpm clean && pnpm build",
+    "after:@release-it/conventional-changelog:beforeRelease": "pnpm prettier --write CHANGELOG.md"
+  }
+}
